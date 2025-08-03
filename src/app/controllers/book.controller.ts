@@ -99,9 +99,8 @@ booksRouter.get('/',async(req:Request,res:Response)=>{
 
   try {
     
-    // const allBook = await Books.find().limit(2)
-    // const allBook = await Books.find().limit(2)
-    // Books.find({ genre: "FANTASY" }).sort({ createdAt: -1 }).limit(5)
+    const allBook = await Books.find().limit(2)
+  
     console.log(req.query)
 
     res.status(201).json({
