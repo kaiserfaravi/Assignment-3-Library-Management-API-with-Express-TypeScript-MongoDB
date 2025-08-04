@@ -60,5 +60,13 @@ const bookschema = new Schema<Ibook>(
     timestamps: true,
   }
 );
+bookschema.pre("save", function (next) {
+  console.log(` Saving new book: ${this.title}`);
+  this.title = this.title.trim();
+  next();
+});
+bookschema.post("save", function (doc) {
+  console.log(` Book "${doc.title}" saved successfully with ID: ${doc._id}`);
+});
 
 export const Books = model<Ibook>("Books", bookschema);

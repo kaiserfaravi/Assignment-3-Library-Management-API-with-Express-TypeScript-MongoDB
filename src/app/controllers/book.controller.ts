@@ -95,29 +95,32 @@ booksRouter.delete('/:bookId',async(req:Request,res:Response)=>{
 
 // all data:filtering,sorting,limiting
 
-booksRouter.get('/',async(req:Request,res:Response)=>{
-
+booksRouter.get('/',async (req:Request,res:Response)=>{
   try {
-    
-    const allBook = await Books.find().limit(2)
-  
-    console.log(req.query)
+    const filter = req.query.filter as string;
+    const sortBy = req.query.sortBy as string || "createdAt";
+    const sort = req.query.sort === "desc" ? -1 : 1;
+     const limit = parseInt(req.query.limit as string) || 10;
 
-    res.status(201).json({
+     const query:any ={}
+     if(filter){
+      query.genre = filter
+     }
 
-      success:true,
-      message:"all data retrieve succesfully",
-      data:allBook
-    })
+     const books = await Books.find(query).sort({[sortBy]:sort}).limit(limit)
+     
+      res.status(200).json({
+      success: true,
+      message: "Books retrieved successfully",
+      data: books,
+    });
+
   } catch (error) {
-
-    res.status(402).json({
-      success:false,
-      message:"all data no patched successfully",
-      error:error
-    })
-    
+   
+    res.status(500).json({
+      success: false,
+      message: "Kono boi pawa jaini",
+      error: error,
+    });
   }
-
 })
-
