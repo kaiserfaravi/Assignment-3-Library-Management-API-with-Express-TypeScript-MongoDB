@@ -12,7 +12,7 @@ This project supports CRUD operations on books, borrowing books with business lo
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Business Logic](#business-logic)
-- [ Live site ,Git Link,Video Explanation Link](#live-site)
+- [All Link](#all-links)
 
 
 
@@ -96,6 +96,7 @@ PORT=5000
 
 - Store borrow record: Save book ID, quantity borrowed, and due date
 
+## All Links
 ## Live site ,Git Link,Video Explanation Link
 - [Github](https://github.com/kaiserfaravi/Assignment-3-Library-Management-API-with-Express-TypeScript-MongoDB)
 
