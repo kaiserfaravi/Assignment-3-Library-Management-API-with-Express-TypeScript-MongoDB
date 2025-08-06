@@ -12,7 +12,7 @@ This project supports CRUD operations on books, borrowing books with business lo
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Business Logic](#business-logic)
-- [ Live site ,Git Link,Video Explanation Link](#all-Links)
+- [ Live site ,Git Link,Video Explanation Link](#Live site ,Git Link,Video Explanation Link)
 
 
 
@@ -97,5 +97,6 @@ PORT=5000
 - Store borrow record: Save book ID, quantity borrowed, and due date
 
 ## Live site ,Git Link,Video Explanation Link
--[Github](https://github.com/kaiserfaravi/Assignment-3-Library-Management-API-with-Express-TypeScript-MongoDB)
--[live-link-vercel](https://library-management-as3-lv2.vercel.app/)
+- [Github](https://github.com/kaiserfaravi/Assignment-3-Library-Management-API-with-Express-TypeScript-MongoDB)
+
+- [live-link-vercel](https://library-management-as3-lv2.vercel.app/)
