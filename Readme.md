@@ -78,12 +78,12 @@ PORT=5000
 
 ## API Endpoiints
 
-** BOOKs **
+**Books**
 
 - 	`/api/books`	(Create a new book and retrive books using query)
 -   `/api/books/:bookId`	(Retrieve,delete,update a single book by ID)
 
-** Borrow Books **
+**Borrow Books**
  - 	`/api/borrow`	(Borrow a book with quantity and due date ,get summary reports of borrowed books)
 
 
