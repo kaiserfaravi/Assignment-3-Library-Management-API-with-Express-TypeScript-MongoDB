@@ -101,3 +101,5 @@ PORT=5000
 - [Github](https://github.com/kaiserfaravi/Assignment-3-Library-Management-API-with-Express-TypeScript-MongoDB)
 
 - [live-link-vercel](https://library-management-as3-lv2.vercel.app/)
+
+-[video-explanation](https://drive.google.com/file/d/17rXR1tWWyMAltsIzOSPjR7viuEx2wFr_/view?usp=sharing)

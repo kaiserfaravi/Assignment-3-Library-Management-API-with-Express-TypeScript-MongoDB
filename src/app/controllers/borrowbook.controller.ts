@@ -9,7 +9,7 @@ export const borrowBooksRouter = express.Router();
 borrowBooksRouter.post("/", async (req: Request, res: Response) => {
   try {
     const { book: bookId, quantity, dueDate } = req.body;
-
+    
     // 1. Verify the book exists and has enough copies
     const book = await Books.findById(bookId);
     if (!book) {
@@ -58,6 +58,7 @@ borrowBooksRouter.post("/", async (req: Request, res: Response) => {
 
 // Get borrowed books summary
 borrowBooksRouter.get("/", async (req: Request, res: Response) => {
+
   try {
     const summary = await borrowBooks.aggregate([
       {

@@ -1,3 +1,0 @@
-vercel-live link: https://library-management-as3-lv2.vercel.app/
-github-link:https://github.com/kaiserfaravi/Assignment-3-Library-Management-API-with-Express-TypeScript-MongoDB
-video-explanation-link:

@@ -75,7 +75,6 @@ booksRouter.delete('/:bookId',async(req:Request,res:Response)=>{
     const bookId = req.params.bookId;
     const deletedBook = await Books.findByIdAndDelete(bookId)
     res.status(201).json({
-      
       success:true,
       message:"Book deleted succesfully",
       data:deletedBook
