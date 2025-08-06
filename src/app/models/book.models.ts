@@ -1,7 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
-import { Ibook } from "../interfaces/book.interface";
+import { BookStaticMethods, Ibook } from "../interfaces/book.interface";
 
-const bookschema = new Schema<Ibook>(
+const bookschema = new Schema<Ibook,BookStaticMethods>(
   {
     title: {
       type: String,
@@ -60,6 +60,28 @@ const bookschema = new Schema<Ibook>(
     timestamps: true,
   }
 );
+
+// statics mathods;
+
+
+
+bookschema.static("updateAvailability", async function(bookId: mongoose.Types.ObjectId) {
+  const book = await this.findById(bookId);
+  if (!book) {
+    throw new Error('Book not found');
+  }
+  
+  // Update available status based on copies
+  if (book.copies <= 0) {
+    book.available = false;
+  } else {
+    book.available = true;
+  }
+  
+  await book.save();
+  return book;
+});
+
 bookschema.pre("save", function (next) {
   console.log(` Saving new book: ${this.title}`);
   this.title = this.title.trim();
@@ -69,4 +91,4 @@ bookschema.post("save", function (doc) {
   console.log(` Book "${doc.title}" saved successfully with ID: ${doc._id}`);
 });
 
-export const Books = model<Ibook>("Books", bookschema);
+export const Books = model<Ibook,BookStaticMethods>("Books", bookschema);

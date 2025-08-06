@@ -1,8 +1,8 @@
 import { Application, Request, Response } from "express"
 import { booksRouter } from "./app/controllers/book.controller"
 import { borrowBooksRouter } from "./app/controllers/borrowbook.controller"
+import express from "express"
 
-const express = require('express')
 const app:Application = express()
 app.use(express.json())
 
