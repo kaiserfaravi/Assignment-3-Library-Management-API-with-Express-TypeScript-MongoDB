@@ -12,8 +12,9 @@ This project supports CRUD operations on books, borrowing books with business lo
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Business Logic](#business-logic)
-- [Aggregation & Reporting](#aggregation--reporting)
-- [Error Handling](#error-handling)
+- [ Live site ,Git Link,Video Explanation Link](#all-Links)
+
+
 
 ## Project Description
 
@@ -52,4 +53,49 @@ This project is a backend API for a Library Management System, allowing users to
 
 2. Install dependencies
    `npm install`
-   
+
+3. Setup environment variables
+   Create a .env file in the root directory and add:
+   don't forget to .env file to gitignore ottherwise data may licked
+
+```
+MONGO_URI= Your database URI
+PORT=5000
+
+```
+
+4. Run the development server
+   `npm run dev`
+
+## Usage
+
+1. Server runs on http://localhost:5000 by default
+2. Test APIs using Postman
+3. ** Base Routes **
+   -/api/books for book-related operations
+   -/api/borrow for borrow-related operations
+
+
+## API Endpoiints
+
+** BOOKs **
+
+- 	`/api/books`	(Create a new book and retrive books using query)
+-   `/api/books/:bookId`	(Retrieve,delete,update a single book by ID)
+
+** Borrow Books **
+ - 	`/api/borrow`	(Borrow a book with quantity and due date ,get summary reports of borrowed books)
+
+
+## Business Logic
+- Verify availability: Before borrowing, system checks if enough copies exist
+
+- Update copies: Deduct borrowed quantity from available copies
+
+- Update availability: If copies become zero, set available to false automatically
+
+- Store borrow record: Save book ID, quantity borrowed, and due date
+
+## Live site ,Git Link,Video Explanation Link
+-[Github](https://github.com/kaiserfaravi/Assignment-3-Library-Management-API-with-Express-TypeScript-MongoDB)
+-[live-link-vercel](https://library-management-as3-lv2.vercel.app/)
